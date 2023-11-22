@@ -53,7 +53,7 @@ public class OsobaController {
     return new ModelAndView("osoby")
             .addObject("formInclude", "prijmeni.ftlh")
             //TODO vytvořit a použít správnou metodu pro načtení dat
-            .addObject("osoby", service.seznamOsob(pageable));
+            .addObject("osoby", service.seznamDlePrijmeni(prijmeni, pageable));
   }
 
   @GetMapping("/obec")
@@ -61,7 +61,7 @@ public class OsobaController {
     return new ModelAndView("osoby-s-adresou")
             .addObject("formInclude", "obec.ftlh")
             //TODO vytvořit a použít správnou metodu pro načtení dat
-            .addObject("osoby", service.seznamOsob(pageable));
+            .addObject("osoby", service.seznamDleObce(obec,pageable));
   }
 
   @GetMapping("/minimalni-vek")
@@ -69,7 +69,7 @@ public class OsobaController {
     return new ModelAndView("osoby")
             .addObject("formInclude", "minimalni-vek.ftlh")
             //TODO vytvořit a použít správnou metodu pro načtení dat
-            .addObject("osoby", service.seznamOsob(pageable));
+            .addObject("osoby", service.seznamDleVeku(vek,pageable));
   }
 
   @ModelAttribute("currentYear")
